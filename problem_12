@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class Main {
+  
+  public static int triangleNmuber(int p){
+    return p*(p+1)/2;
+  }
+  public static void main(String[] args) {
+    
+    int noDivisors = 0; int n =triangleNmuber(10);
+    
+    for(int i=60;noDivisors<500;i++){
+      n =triangleNmuber(i); noDivisors =0;
+      for(int j =1;j<=Math.sqrt(n)+1;j++){
+        if(n%j==0){
+          if(n/j==j) noDivisors++;else noDivisors+=2;
+        }
+      }
+    }
+    
+    System.out.println(n);
+  }
+}
