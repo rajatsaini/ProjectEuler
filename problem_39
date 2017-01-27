@@ -1,0 +1,35 @@
+# Solution to problem-39
+# Maybe the worst-inefficient program.
+# Uses brute force to solve using Java.
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class Main {
+  public static void main(String[] args) {
+    
+    int max=0;int numb=0;
+    for(int n=120;n<1001;n++){
+      int count =0;
+      for(int i=1;i<n/2;i++){
+        for(int j=1;j<n/2;j++){
+          for(int k=1;k<n/2;k++){
+             if(i+j+k ==n && (Math.pow(i,2)+Math.pow(j,2)) == Math.pow(k,2)){
+               //System.out.println(i+" "+j+" "+k);
+               count++;
+             }
+          }
+        }
+      }
+      if(count>max){
+        max = count;
+        numb = n;
+    }
+    
+    }
+    System.out.println(max+" "+numb);
+  }
+}
