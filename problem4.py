@@ -1,8 +1,6 @@
 def isPalin(n):
-	li = list(str(n))
-	li_old = list(str(n))
-	li.reverse()
-	if li==li_old:
+	s = str(n)
+	if s==s[::-1]:
 		return True
 	return False
 
